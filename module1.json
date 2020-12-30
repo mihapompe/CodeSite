@@ -1,0 +1,19 @@
+{
+    "exercises": [
+        {
+            "download_files": [
+                "variables_tester.py",
+                "variables_exercises.py"
+            ],
+            "exercise_number": 1,
+            "subexercises": [
+                "Write a function that return a sum of two numbers"
+            ],
+            "exercise_type": "exercise",
+            "title": "Variables"
+        }
+    ],
+    "description": "Working on variables and arithmetic expressoions",
+    "module_number": 1,
+    "title": "Module 1"
+}
