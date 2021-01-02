@@ -1,0 +1,20 @@
+{
+    "exercises": [
+        {
+            "description": "Something",
+            "download_files": [
+                "loops_tester.py",
+                "loops_exercises.py"
+            ],
+            "exercise_number": 1,
+            "subexercises": [
+                "Write a function that return a sum of two numbers"
+            ],
+            "exercise_type": "exercise",
+            "title": "Loops"
+        }
+    ],
+    "description": "Working with while and for loops and if and else statements.",
+    "module_number": 2,
+    "title": "Loops"
+}

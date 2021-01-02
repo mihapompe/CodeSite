@@ -1,0 +1,37 @@
+{
+    "title": "Python basics",
+    "module_number": 1,
+    "description": "Working on variables, conditionals and arithmetic expressions",
+    "exercises": [
+        {
+            "title": "Conditions and Python basics",
+            "description": "Introduction to Python. Get familiar with how to solve and run these exercises.",
+            "exercise_number": 1,
+            "subexercises": [
+                "Write a function that calculates the area of a rectangle, which is given by the formula <var>A=a*b</var>. The function should be called <code>area(a, b)</code>.<br> <pre><code>>>> area(4, 3):<br>12</code></pre>",
+                "Write a function called <code>mean(a, b)</code> that calculates the mean of the two numbers. <br><pre><code>>>> mean(2, 4):<br>3</code></pre>",
+                "Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
+            ],
+            "download_files": [
+                "conditions_tester.py",
+                "conditions_exercises.py"
+            ],
+            "exercise_type": "exercise"
+        },
+        {
+            "title": "Strings",
+            "description": "SHOULD BE CHANGED Introduction to Python. Get familiar with how to solve and run these exercises.",
+            "exercise_number": 2,
+            "subexercises": [
+                "SHOULD BE CHANGED Write a function that calculates the area of a rectangle, which is given by the formula <var>A=a*b</var>. The function should be called <code>area(a, b)</code>.<br> <pre><code>>>> area(4, 3):<br>12</code></pre>",
+                "SHOULD BE CHANGED Write a function called <code>mean(a, b)</code> that calculates the mean of the two numbers. <br><pre><code>>>> mean(2, 4):<br>3</code></pre>",
+                "SHOULD BE CHANGED Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
+            ],
+            "download_files": [
+                "conditions_tester.py",
+                "conditions_exercises.py"
+            ],
+            "exercise_type": "exercise"
+        }
+    ]
+}

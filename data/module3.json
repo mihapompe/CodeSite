@@ -1,0 +1,19 @@
+{
+    "exercises": [
+        {
+            "description": "Something",
+            "download_files": [
+
+            ],
+            "exercise_number": 1,
+            "subexercises": [
+                "Write a function that return a sum of two numbers."
+            ],
+            "exercise_type": "exercise",
+            "title": "Loops"
+        }
+    ],
+    "description": "Revising Python basics. Go back to any previous exercises you might have thought were too hard and finish them.",
+    "module_number": 3,
+    "title": "Revision"
+}

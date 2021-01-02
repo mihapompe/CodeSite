@@ -1,0 +1,69 @@
+{
+    "users": [
+        {
+            "name": "Miha",
+            "surname": "Pompe",
+            "username": "mihapompe",
+            "password": "mihapassword",
+            "mail": "miha.pompe@test.com",
+            "enabled_modules": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "progress": [
+                [
+                    4,
+                    50,
+                    0
+                ],
+                [
+                    78,
+                    0
+                ],
+                [
+                    0
+                ],
+                [
+                    10
+                ]
+            ],
+            "admin": true,
+            "starting_date": [
+                2021,
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Some",
+            "surname": "User",
+            "username": "someuser",
+            "password": "somepassword",
+            "mail": "some.user@test.com",
+            "enabled_modules": [
+                1,
+                2
+            ],
+            "progress": [
+                [
+                    10,
+                    20,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "admin": false,
+            "starting_date": [
+                2020,
+                12,
+                26
+            ]
+        }
+    ]
+}
