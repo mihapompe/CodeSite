@@ -96,7 +96,9 @@ for i in range(len(functions)):
 
 if score == 0:
     score_str = "0"
+    score = 0
 else:
     score_str = str(round(score/max_score*100, 1))
-print("Your have finished {} % of this week exercises".format(score_str))
-score = int(score/max_score*100)
+    score = int(score/max_score*100)
+print("Your have finished {} % of this exercise".format(score_str))
+

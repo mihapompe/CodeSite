@@ -20,6 +20,8 @@ Before you begin, ensure you have met the following requirements:
 * Clone the repository to your desired location.
 * Run the file controller.py using by running `python controller.py`
 * In your browser open [localhost:8080/login](localhost:8080/login)
+* If you want to login as admin use username: adminuser, password: adminpass
+* If you want to login as a regular user use username: regularuser password: regularpass
 
 ## Features
 * Login page, remember me checkbox, password hidden

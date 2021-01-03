@@ -16,7 +16,7 @@
                 [
                     4,
                     50,
-                    100,
+                    0,
                     100
                 ],
                 [
@@ -51,7 +51,8 @@
                 [
                     10,
                     20,
-                    0
+                    100,
+                    100
                 ],
                 [
                     0,
@@ -64,6 +65,123 @@
                 2020,
                 12,
                 26
+            ]
+        },
+        {
+            "name": "Some2",
+            "surname": "User2",
+            "username": "someuser2",
+            "password": "$pbkdf2-sha256$29000$1Zrzvvd.7z1nbE2JcQ6hNA$Y8K8mJJSKkYrzEoBDGW5zpGdyR5DOFmpHRQwXTzmhHU",
+            "mail": "somemail@some.com",
+            "enabled_modules": [
+                1
+            ],
+            "progress": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "admin": false,
+            "starting_date": [
+                2020,
+                12,
+                29
+            ]
+        },
+        {
+            "name": "Admin",
+            "surname": "User",
+            "username": "adminuser",
+            "password": "$pbkdf2-sha256$29000$svY.R0jpvRfCmFMq5RyDUA$0T0qdRNr8v5pnYf9h.JJ826Kld2KvwtcvVRAHgZUstw",
+            "mail": "admin.user@mail.com",
+            "enabled_modules": [
+                1
+            ],
+            "progress": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "admin": true,
+            "starting_date": [
+                2021,
+                1,
+                1
+            ]
+        },
+        {
+            "name": "Regular",
+            "surname": "User",
+            "username": "regularuser",
+            "password": "$pbkdf2-sha256$29000$rjWG8N67F2JMyfmfUwrh3A$acBzVsS2NhWJa/vYnInkkTEXINv5zk3Noxth/H88JYQ",
+            "mail": "regular.user@mail.com",
+            "enabled_modules": [
+                1
+            ],
+            "progress": [
+                [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ],
+                [
+                    0,
+                    0,
+                    0
+                ]
+            ],
+            "admin": false,
+            "starting_date": [
+                2021,
+                1,
+                1
             ]
         }
     ]

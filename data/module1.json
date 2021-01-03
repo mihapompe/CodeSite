@@ -39,7 +39,9 @@
             "title": "Video test",
             "description": "You can also watch videos.",
             "exercise_number": 3,
-            "subexercises": ["You can add parts to videos as well."],
+            "subexercises": [
+                "You can add parts to videos as well."
+            ],
             "download_files": [
                 "conditions_exercises.py"
             ],
@@ -50,7 +52,9 @@
             "title": "Text test",
             "description": "You can also see just normal text.",
             "exercise_number": 4,
-            "subexercises": ["You can add parts to texts."],
+            "subexercises": [
+                "You can add parts to texts."
+            ],
             "download_files": [
                 "conditions_exercises.py"
             ],

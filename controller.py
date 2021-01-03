@@ -86,8 +86,8 @@ def mark_as_completed(module_number, exercise_number):
         "exercise_number": int(exercise_number),
         "score": 100
     }
-    username = get_user_from_cookie()
-    append_results(username, results)
+    user = get_user_from_cookie()
+    append_results(user.username, results)
     return bottle.redirect("/modules/module{}".format(module_number))
 
 @bottle.get("/templates")
