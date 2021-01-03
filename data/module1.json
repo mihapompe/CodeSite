@@ -13,10 +13,11 @@
                 "Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
             ],
             "download_files": [
-                "conditions_tester.py",
-                "conditions_exercises.py"
+                "conditions_exercises.py",
+                "conditions_tester.py"
             ],
-            "exercise_type": "exercise"
+            "exercise_type": "exercise",
+            "video_file": ""
         },
         {
             "title": "Strings",
@@ -28,10 +29,33 @@
                 "SHOULD BE CHANGED Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
             ],
             "download_files": [
-                "conditions_tester.py",
+                "conditions_exercises.py",
+                "conditions_tester.py"
+            ],
+            "exercise_type": "exercise",
+            "video_file": ""
+        },
+        {
+            "title": "Video test",
+            "description": "You can also watch videos.",
+            "exercise_number": 3,
+            "subexercises": ["You can add parts to videos as well."],
+            "download_files": [
                 "conditions_exercises.py"
             ],
-            "exercise_type": "exercise"
+            "exercise_type": "video",
+            "video_file": "UVP-2019-05-07.mp4"
+        },
+        {
+            "title": "Text test",
+            "description": "You can also see just normal text.",
+            "exercise_number": 4,
+            "subexercises": ["You can add parts to texts."],
+            "download_files": [
+                "conditions_exercises.py"
+            ],
+            "exercise_type": "text",
+            "video_file": ""
         }
     ]
 }

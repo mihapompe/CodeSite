@@ -2,10 +2,11 @@ import json
 import time
 import bottle
 import datetime
+from passlib.hash import pbkdf2_sha256
 
 # These constants should be adjusted when adding a new module or exercise.
 NUMBER_OF_MODULES = 4
-NUMBER_OF_EXERCISES = [2,3,3,3]
+NUMBER_OF_EXERCISES = [4,3,3,3]
 
 # =============================================================================
 # User
@@ -18,7 +19,7 @@ class User():
         self.name = name                        # first name
         self.surname = surname                  # surname
         self.username = username                # username
-        self.password = password                # password, not encrypted
+        self.password = password                # password, encrypted SHA256
         self.mail = mail                        # str, mail
         self.enabled_modules = enabled_modules  # list of enabled modules.
         self.progress = progress                # 2D list, gives you the progress for a given exercise in %.
@@ -76,6 +77,12 @@ class User():
             result += sum(exercise_result)/len(exercise_result)
         return round(result/NUMBER_OF_MODULES,1)
 
+def add_new_user(user):
+    users = load_users()
+    users.append(user)
+    save_users(users)
+    return
+
 def load_users():
     file_name = "data/users.json"
     users_list = []
@@ -103,11 +110,14 @@ def save_user(user):
     save_users(users)
     return
 
+def encrypt_password(password):
+    return pbkdf2_sha256.hash(password)
+
 def check_login(username, password):
     users = load_users()
     correct = False
     for user in users:
-        if user.username == username and user.password == password:
+        if user.username == username and pbkdf2_sha256.verify(password, user.password):
             return True
     return False
 
@@ -151,13 +161,14 @@ def personalize_file(file_name, module_number, exercise_number, username):
 # =============================================================================
 
 class Exercise():
-    def __init__(self, title, description, exercise_number, subexercises, download_files, exercise_type = "exercise"):
+    def __init__(self, title, description, exercise_number, subexercises, download_files, exercise_type = "exercise", video_file=""):
         self.title = title                      # title of the exercise, e.g. "Loops"
         self.description = description          # description
         self.exercise_number = exercise_number  # starting with 1
         self.subexercises = subexercises        # list of subexercises, string
         self.download_files = download_files    # list of file names, e.g. loops_tester.py
         self.type = exercise_type               # ["exercise", "text", "video"]
+        self.video_file = video_file
 
     def __repr__(self):
         return self.title
@@ -169,7 +180,8 @@ class Exercise():
             "exercise_number": self.exercise_number,
             "subexercises": self.subexercises,
             "download_files": self.download_files,
-            "exercise_type": self.type
+            "exercise_type": self.type,
+            "video_file": self.video_file
         }
 
     @staticmethod
@@ -180,7 +192,8 @@ class Exercise():
             exercise_number = dictionary["exercise_number"],
             subexercises = dictionary["subexercises"],
             download_files = dictionary["download_files"],
-            exercise_type = dictionary["exercise_type"]
+            exercise_type = dictionary["exercise_type"],
+            video_file = dictionary["video_file"]
         )
 
 def add_exercise(module_number, exercise):

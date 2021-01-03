@@ -25,8 +25,6 @@ def do_login():
     username = bottle.request.forms.get('username')
     password = bottle.request.forms.get('password')
     remember_me = bool(bottle.request.forms.get('remember_me'))
-    print(remember_me)
-    print(username, password)
     if check_login(username, password):
         today = datetime.date.today()
         bottle.response.set_cookie("user_cookie", username, expires=datetime.date(today.year+1, today.month, today.day))
@@ -43,7 +41,6 @@ def module_page(module_number):
 
 @bottle.get("/static/<file_name:path>")
 def serve_static(file_name):
-    print(file_name)
     return bottle.static_file(file_name, root="static/")
 
 @bottle.get("/instructions")
@@ -66,17 +63,36 @@ def instructions_page():
 def download(module_number, exercise_number):
     modules_list = read_modules()
     exercise = modules_list[int(module_number)-1].exercises[int(exercise_number)-1]
-    file_name = exercise.download_files[1]
+    file_name = exercise.download_files[0]
     return bottle.static_file(file_name, root="download/", download=file_name)
 
 @bottle.get("/download_tester/<module_number>/<exercise_number>")
 def download(module_number, exercise_number):
     modules_list = read_modules()
     exercise = modules_list[int(module_number)-1].exercises[int(exercise_number)-1]
-    file_name = exercise.download_files[0]
+    file_name = exercise.download_files[1]
     username = get_user_from_cookie().username
     personalize_file(file_name, module_number, exercise_number, username)
     return bottle.static_file(username+file_name, root="download/", download=username+file_name)    
+
+@bottle.get("/download/<filename>")
+def download(filename):
+    return bottle.static_file(filename, root="download/", download=filename)
+
+@bottle.get("/mark_as_completed/<module_number>/<exercise_number>")
+def mark_as_completed(module_number, exercise_number):
+    results = {
+        "module_number": int(module_number),
+        "exercise_number": int(exercise_number),
+        "score": 100
+    }
+    username = get_user_from_cookie()
+    append_results(username, results)
+    return bottle.redirect("/modules/module{}".format(module_number))
+
+@bottle.get("/templates")
+def instructions_page():
+    return bottle.template("views/templates.tpl", user = get_user_from_cookie())
 
 @bottle.get("/logout")
 def logout():
@@ -118,6 +134,36 @@ def profile():
         return bottle.template("views/dashboard.tpl", user = user, users = users)
     return bottle.redirect("/modules")
 
+@bottle.get("/add_user")
+def add_user():
+    user = get_user_from_cookie()
+    if user.admin == True:
+        return bottle.template("views/add_user.tpl", user = user)
+    return bottle.redirect("/modules")
+
+@bottle.post("/add_user")
+def post_user():
+    name = bottle.request.forms.get('name')
+    surname = bottle.request.forms.get('surname')
+    username = bottle.request.forms.get('username')
+    password = bottle.request.forms.get('password')
+    mail = bottle.request.forms.get('mail')
+    year = bottle.request.forms.get('starting_date_year')
+    month = bottle.request.forms.get('starting_date_month')
+    day = bottle.request.forms.get('starting_date_day')
+    admin = bottle.request.forms.get('admin')
+    add_new_user(User(
+        name = name,
+        surname = surname,
+        username = username,
+        password = encrypt_password(password),
+        mail = mail,
+        starting_date = [int(year), int(month), int(day)],
+        admin = bool(admin)
+    ))
+    bottle.redirect("/dashboard")
+    return
+
 @bottle.get("/add_exercise/<module_number>")
 def add_exercise_page(module_number):
     user = get_user_from_cookie()
@@ -135,7 +181,6 @@ def post_exercise(module_num):
     description = bottle.request.forms.get('description')
     exercise_type = bottle.request.forms.get('type')
     uploads = bottle.request.files.getall('test_files')
-    print(module_number, exercise_number, title, description, exercise_type, uploads)
     test_files = []
     for upload in uploads:
         name, ext = os.path.splitext(upload.filename)
@@ -174,7 +219,6 @@ def post_subexercise():
             for exercise in module.exercises:
                 if exercise.exercise_number == exercise_number:
                     exercise.subexercises.append(description)
-                    print(exercise)
                     update_exercise(module_number, exercise)
                     return bottle.redirect("/modules/module{}".format(module_number))
     print("Subexercise not created, check module and exercise numbers.")

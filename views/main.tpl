@@ -41,6 +41,9 @@
             <li class="nav-item active">
               <a class="nav-link" aria-current="page" href="/dashboard">Dashboard</a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/templates">Templates</a>
+            </li>
             % end
           </ul>
           <ul class="navbar-nav me-right">
@@ -70,17 +73,7 @@
           <img class="mb-2" src="../static/python_logo.png" alt="" width="22" height="22">
           <small class="d-block mb-3 text-muted">&copy; 2021, Miha Pompe</small>
         </div>
-        <div class="col-6 col-md">
-          <!--<h5>Features</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="link-secondary" href="#">Cool stuff</a></li>
-            <li><a class="link-secondary" href="#">Random feature</a></li>
-            <li><a class="link-secondary" href="#">Team feature</a></li>
-            <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-            <li><a class="link-secondary" href="#">Another one</a></li>
-            <li><a class="link-secondary" href="#">Last time</a></li>
-          </ul>-->
-        </div>
+        <div class="col-6 col-md"></div>
         <div class="col-6 col-md">
           <h5>Resources</h5>
           <ul class="list-unstyled text-small">

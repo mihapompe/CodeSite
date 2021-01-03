@@ -32,5 +32,6 @@
       % end
     </tbody>
   </table>
+  <a href="/add_user" class="btn btn-primary">Add user</a>
 </div>
 

@@ -4,7 +4,7 @@
             "name": "Miha",
             "surname": "Pompe",
             "username": "mihapompe",
-            "password": "mihapassword",
+            "password": "$pbkdf2-sha256$29000$T6lVCqEUwrjX.t8b41xLCQ$z9sgpEwSnWCCfadxoE43C217AtfWpgiUZT.m005AiHs",
             "mail": "miha.pompe@test.com",
             "enabled_modules": [
                 1,
@@ -16,7 +16,8 @@
                 [
                     4,
                     50,
-                    0
+                    100,
+                    100
                 ],
                 [
                     78,
@@ -40,7 +41,7 @@
             "name": "Some",
             "surname": "User",
             "username": "someuser",
-            "password": "somepassword",
+            "password": "$pbkdf2-sha256$29000$WstZy9mbU2qN0XpPSSlljA$g4cGq8EeYfzA0zgU3Q.tWnbKx2rVB8EobE/NcTyyFSA",
             "mail": "some.user@test.com",
             "enabled_modules": [
                 1,

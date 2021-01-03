@@ -10,7 +10,8 @@
                 "Write a function that return a sum of two numbers."
             ],
             "exercise_type": "exercise",
-            "title": "Loops"
+            "title": "Loops",
+            "video_file": ""
         }
     ],
     "description": "Revising Python basics. Go back to any previous exercises you might have thought were too hard and finish them.",

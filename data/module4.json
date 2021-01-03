@@ -3,15 +3,15 @@
         {
             "description": "Something",
             "download_files": [
-                "loops_tester.py",
-                "loops_exercises.py"
+
             ],
             "exercise_number": 1,
             "subexercises": [
                 "Write a function that return a sum of two numbers"
             ],
             "exercise_type": "exercise",
-            "title": "Loops"
+            "title": "Loops",
+            "video_file": ""
         }
     ],
     "description": "Revising Python basics",

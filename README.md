@@ -7,7 +7,9 @@ To enter the site a user must enter it's credentials (username and password). He
 ## Admin mode
 Admin is a normal user and has the same features, but also a few additional ones. In this mode you can:
 * See all user data (except passwords) and their progress
+* Add users
 * Add new exercises and test files
+* Access to templates
 
 ## Requirements
 Before you begin, ensure you have met the following requirements:
@@ -17,17 +19,31 @@ Before you begin, ensure you have met the following requirements:
 ## How to install and run this project
 * Clone the repository to your desired location.
 * Run the file controller.py using by running `python controller.py`
+* In your browser open [localhost:8080/login](localhost:8080/login)
+
+## Features
+* Login page, remember me checkbox, password hidden
+* Passwords encrypted and saved as SHA256 hashes
+* Track your overall progress and progress for an individual module and exercise
+* Categorized modules, exercises and parts (subexercises)
+* Exercise descriptions can be stylized using HTML tags
+* Support for 3 types of exercises (exercise, text, video)
+    * Exercise type - custom tester files, progress 
+    * Text type - mark as completed button, download files
+    * Video type -mp4 video support, video thumbnail, mark as completed button, download files
+* Additional webpages: instructions, about, contact me, license and other resources
+* Profile view - view all of your personal information that is stored
+* Stats view - view your progress, for each module and exercise
+* Logout - All cookies will be deleted
+* New modules are unlocked every week
+* Admin mode
+    * Add exercise
+    * Add part
+    * Add new user
+    * Access to templates for _exercise.py and _tester.py files
+    * Dashboard - see data and progress of all users
+
 
 ## Resources
 * [Bottle documentation](https://bottlepy.org/docs/dev/index.html)
 * [Bootstrap examples and documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-
-## To-Do
-* Fill modules and exercises with more content
-* Create a template for videos
-* Create a tester template
-* Potentially merge _exercise.py and _tester.py
-* Add support for testing timing complexity of the submitted solution
-* Add a form for adding new users
-* Add a form for changing modules, exercises and subexercises
-* Add password encryption
