@@ -2,6 +2,8 @@
 
 <div class="py-5 text">
   <h2>Add user</h2>
+  <p class="lead">All fields must be filled. Make sure you use correct data types. Grant admin privileges only to 
+  chosen users.</p>
 </div>
 
 <div class="row g-3">

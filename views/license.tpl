@@ -9,7 +9,7 @@
 <div class="row">
     <div class="col-md-9">
         <h5>MIT License</h5>
-        Copyright &copy; 2020 Miha Pompe
+        Copyright &copy; 2020-2021 Miha Pompe
         <br><br>
         Permission is hereby granted, free of charge, to any person obtaining a copy
         of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@
         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
         SOFTWARE.
         <br><br>
-        THE CONTENT OF THIS WEBSITE IS CONSIDERED INTELECTUAL PROPERTY AND IS NOT ALLOWED
+        THE CONTENT OF THIS WEBSITE IS CONSIDERED INTELLECTUAL PROPERTY AND IS NOT ALLOWED
         TO BE COPIED OR DISTRIBUTED. IN CASE OF VIOLATION YOU WILL BE REMOVED FROM THE PROGRAM
         WITHOUT A REFUND.
     </div>

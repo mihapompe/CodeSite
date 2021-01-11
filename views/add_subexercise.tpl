@@ -5,7 +5,8 @@
     <h2>Add subexercise</h2>
     <p class="lead">Module and exercise numbers are filled out automatically, 
     but can still be changed. Instructions are styled with HTML. To use special HTML
-    characters please reffer to HTML documantation.</p>
+    characters please reffer to HTML documantation. Use the cheatsheet to help
+    you achieve the desired look.</p>
 </div>
 
 <div class="row g-3">
@@ -45,7 +46,7 @@
                 <div class="col-12">  
                     <label for="username" class="form-label">Instructions</label>
                     <div class="input-group">
-                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Instructions" value="" rows="10" required></textarea>
+                    <textarea type="text" class="form-control" id="description" name="description" placeholder="Instructions" value="" rows="20" required></textarea>
                     </div>
                 </div>
             </div>

@@ -4,6 +4,10 @@ import datetime
 import os
 
 
+@bottle.get("/")
+def index():
+    return bottle.redirect("/login")
+
 @bottle.get("/modules")
 def main_page(username = ""):
     user = get_user_from_cookie(username = username)
@@ -33,11 +37,17 @@ def do_login():
     else:
         return "<p>Login failed. You entered a wrong username or password.</p>"
 
-@bottle.get("/modules/module<module_number>")
+@bottle.get("/modules/module<module_number:int>")
 def module_page(module_number):
     modules_list = read_modules()
     module = modules_list[int(module_number)-1]
-    return bottle.template("views/module.tpl", module = module, user = get_user_from_cookie())
+    user = get_user_from_cookie()
+    file_path = "download/"
+    for exercise in module.exercises:
+        for file_name in exercise.download_files:
+            if os.path.exists(file_path+user.username+file_name) and user.username != "":
+                os.remove(file_path+user.username+file_name)
+    return bottle.template("views/module.tpl", module = module, user = user)
 
 @bottle.get("/static/<file_name:path>")
 def serve_static(file_name):
@@ -59,27 +69,27 @@ def instructions_page():
 def instructions_page():
     return bottle.template("views/debugging.tpl", user = get_user_from_cookie())
 
-@bottle.get("/download_exercises/<module_number>/<exercise_number>")
+@bottle.get("/download_exercises/<module_number:int>/<exercise_number:int>")
 def download(module_number, exercise_number):
     modules_list = read_modules()
     exercise = modules_list[int(module_number)-1].exercises[int(exercise_number)-1]
     file_name = exercise.download_files[0]
     return bottle.static_file(file_name, root="download/", download=file_name)
 
-@bottle.get("/download_tester/<module_number>/<exercise_number>")
+@bottle.get("/download_tester/<module_number:int>/<exercise_number:int>")
 def download(module_number, exercise_number):
     modules_list = read_modules()
     exercise = modules_list[int(module_number)-1].exercises[int(exercise_number)-1]
     file_name = exercise.download_files[1]
     username = get_user_from_cookie().username
     personalize_file(file_name, module_number, exercise_number, username)
-    return bottle.static_file(username+file_name, root="download/", download=username+file_name)    
+    return bottle.static_file(username+file_name, root="download/", download=username+file_name)
 
 @bottle.get("/download/<filename>")
 def download(filename):
     return bottle.static_file(filename, root="download/", download=filename)
 
-@bottle.get("/mark_as_completed/<module_number>/<exercise_number>")
+@bottle.get("/mark_as_completed/<module_number:int>/<exercise_number:int>")
 def mark_as_completed(module_number, exercise_number):
     results = {
         "module_number": int(module_number),
@@ -156,7 +166,7 @@ def post_user():
         name = name,
         surname = surname,
         username = username,
-        password = encrypt_password(password),
+        password = password,#encrypt_password(password),
         mail = mail,
         starting_date = [int(year), int(month), int(day)],
         admin = bool(admin)
@@ -164,7 +174,7 @@ def post_user():
     bottle.redirect("/dashboard")
     return
 
-@bottle.get("/add_exercise/<module_number>")
+@bottle.get("/add_exercise/<module_number:int>")
 def add_exercise_page(module_number):
     user = get_user_from_cookie()
     modules = read_modules()
@@ -173,7 +183,7 @@ def add_exercise_page(module_number):
         return bottle.template("views/add_exercise.tpl", user = user, module_number = module_number, exercise_number = next_exercise_number)
     return bottle.redirect("/modules")
 
-@bottle.post("/add_exercise/<module_num>")
+@bottle.post("/add_exercise/<module_num:int>")
 def post_exercise(module_num):
     module_number = bottle.request.forms.get('module_number')
     exercise_number = bottle.request.forms.get('exercise_number')
@@ -185,7 +195,7 @@ def post_exercise(module_num):
     for upload in uploads:
         name, ext = os.path.splitext(upload.filename)
         test_files.append(upload.filename)
-        if ext not in ('.py', '.jpg', '.jpeg'):
+        if ext not in ('.py', '.jpg', '.jpeg', '.zip'):
             return "File extension not allowed."
         save_path = "download"
         file_path = "{path}/{file}".format(path=save_path, file=upload.filename)
@@ -201,7 +211,7 @@ def post_exercise(module_num):
     bottle.redirect("/modules/module{}".format(module_num))
     return
 
-@bottle.get("/<module_number>/<exercise_number>")
+@bottle.get("/<module_number:int>/<exercise_number:int>")
 def add_subexercise(module_number, exercise_number):
     user = get_user_from_cookie()
     if user.admin == True:

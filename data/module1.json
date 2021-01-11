@@ -21,23 +21,21 @@
         },
         {
             "title": "Strings",
-            "description": "SHOULD BE CHANGED Introduction to Python. Get familiar with how to solve and run these exercises.",
+            "description": "Introduction to Python. Get familiar with how to solve and run these exercises. At the end you can see that the download buttons are disabled since there is no file associated with this exercise.",
             "exercise_number": 2,
             "subexercises": [
-                "SHOULD BE CHANGED Write a function that calculates the area of a rectangle, which is given by the formula <var>A=a*b</var>. The function should be called <code>area(a, b)</code>.<br> <pre><code>>>> area(4, 3):<br>12</code></pre>",
-                "SHOULD BE CHANGED Write a function called <code>mean(a, b)</code> that calculates the mean of the two numbers. <br><pre><code>>>> mean(2, 4):<br>3</code></pre>",
-                "SHOULD BE CHANGED Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
+                "Write a function that calculates the area of a rectangle, which is given by the formula <var>A=a*b</var>. The function should be called <code>area(a, b)</code>.<br> <pre><code>>>> area(4, 3):<br>12</code></pre>",
+                "Write a function called <code>mean(a, b)</code> that calculates the mean of the two numbers. <br><pre><code>>>> mean(2, 4):<br>3</code></pre>",
+                "Write a function <code>check_for_snakes(word)</code> that checks if the word is describing a snake. Snake can be described with the following words: snake, python, anaconda, boa. If the word is describing a snake return <code>True</code>, otherwise return <code>False</code>. All the test cases will use words in lower caps.<br><pre><code>>>> check_for_snakes('snake')<br>True</code></pre>"
             ],
             "download_files": [
-                "conditions_exercises.py",
-                "conditions_tester.py"
             ],
             "exercise_type": "exercise",
             "video_file": ""
         },
         {
             "title": "Video test",
-            "description": "You can also watch videos.",
+            "description": "You can also watch videos and download a file that might be attached to it.",
             "exercise_number": 3,
             "subexercises": [
                 "You can add parts to videos as well."
@@ -50,10 +48,10 @@
         },
         {
             "title": "Text test",
-            "description": "You can also see just normal text.",
+            "description": "If you don't wish to give coding exercises you can still do that just by selecting the 'text' option.",
             "exercise_number": 4,
             "subexercises": [
-                "You can add parts to texts."
+                "Go do 30 pushups and stop staring at the screen for hours on end. You can also attach any other supported file."
             ],
             "download_files": [
                 "conditions_exercises.py"

@@ -2,7 +2,7 @@
 
 <div class="py-5 text">
   <h2>Add exercise</h2>
-  <p class="lead">Module and exercise numbers are filled out automatically, but can still be changed.</p>
+  <p class="lead">Module and exercise numbers are filled out automatically, but can still be changed. Select the correct type of exercise and select the file/s you with to import.</p>
 </div>
 
 <div class="row g-3">
@@ -52,7 +52,7 @@
         <div class="col-12">  
           <label for="username" class="form-label">Description</label>
           <div class="input-group">
-            <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" value="" rows="4"></textarea>
+            <textarea type="text" class="form-control" id="description" name="description" placeholder="Description" value="" rows="15"></textarea>
           </div>
         </div>
 

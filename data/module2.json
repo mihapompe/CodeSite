@@ -3,8 +3,6 @@
         {
             "description": "Something",
             "download_files": [
-                "conditions_exercises.py",
-                "conditions_tester.py"
             ],
             "exercise_number": 1,
             "subexercises": [

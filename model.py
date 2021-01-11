@@ -5,8 +5,8 @@ import datetime
 from passlib.hash import pbkdf2_sha256
 
 # These constants should be adjusted when adding a new module or exercise.
-NUMBER_OF_MODULES = 4
-NUMBER_OF_EXERCISES = [4,3,3,3]
+NUMBER_OF_MODULES = 3
+NUMBER_OF_EXERCISES = [4,1,1]
 
 # =============================================================================
 # User
@@ -177,7 +177,7 @@ class Exercise():
         return {
             "title": self.title,
             "description": self.description,
-            "exercise_number": self.exercise_number,
+            "exercise_number": int(self.exercise_number),
             "subexercises": self.subexercises,
             "download_files": self.download_files,
             "exercise_type": self.type,
@@ -189,7 +189,7 @@ class Exercise():
         return Exercise(
             title = dictionary["title"],
             description = dictionary["description"],
-            exercise_number = dictionary["exercise_number"],
+            exercise_number = int(dictionary["exercise_number"]),
             subexercises = dictionary["subexercises"],
             download_files = dictionary["download_files"],
             exercise_type = dictionary["exercise_type"],
@@ -240,7 +240,7 @@ class Module():
     def dict_to_module(dictionary):
         return Module(
             title = dictionary["title"],
-            module_number = dictionary["module_number"],
+            module_number = int(dictionary["module_number"]),
             description = dictionary["description"],
             exercises = [Exercise.exercise_from_dict(exercise) for exercise in dictionary["exercises"]]
         )
@@ -256,7 +256,6 @@ def read_modules():
     for i in range(1, NUMBER_OF_MODULES+1):
         modules_list.append(Module.upload_module(i))
     return modules_list
-
 
 
 

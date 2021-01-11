@@ -52,7 +52,11 @@
                     <tr>
                         <td>{{mod_num+1}}</td>
                         <td>{{exer_num+1}}</td>
+                        % if exer_score == 100:
+                        <td class="text-success">{{exer_score}} %</td>
+                        % else:
                         <td>{{exer_score}} %</td>
+                        % end
                     </tr>
                 % end
             % end

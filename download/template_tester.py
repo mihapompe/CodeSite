@@ -17,9 +17,9 @@ import random
 # =============================================================================
 # INPUTS
 
-functions = []  #user function names
-functions_t = []   #terster function names
-args_num = []   #number of arguments per par
+functions = []  # user function names
+functions_t = []   # tester function names
+args_num = []   # number of arguments per par
 test_cases = [
     
     ]
@@ -37,12 +37,15 @@ for i in range(len(functions_t)):
     else:
         for args in test_cases[i]:
             results[i].append(func(*args))
+print("Successfully generated all the test cases.")
 
 # =============================================================================
 # TESTER
 
 score = 0
 max_score = 0
+
+print("Starting to test your solutions.")
 
 for i in range(len(functions)):
     max_score += len(test_cases[i])
@@ -55,44 +58,17 @@ for i in range(len(functions)):
             res = func(test_cases[i][case])
         else:
             res = func(*test_cases[i][case])
-        if "all" in dir(res):
-            if  "all" in dir(results[i][case]):
-                if results[i][case].all() != res.all():
-                    score -= 1
-                    if results[i][case] is not None and res is None:
-                        submitted += 1
-                    else:
-                        valid += 1
-                        print("Wrong result, expected {}, received {}".format(results[i][case], res))
-            else:
-                if results[i][case] != res.all():
-                    score -= 1
-                    if results[i][case] is not None and res is None:
-                        submitted += 1
-                    else:
-                        valid += 1
-                        print("Wrong result, expected {}, received {}".format(results[i][case], res))
-        else:
-            if  "all" in dir(results[i][case]):
-                if results[i][case].all() != res:
-                    score -= 1
-                    if results[i][case] is not None and res is None:
-                        submitted += 1
-                    else:
-                        valid += 1
-                        print("Wrong result, expected {}, received {}".format(results[i][case], res))
-            else:
-                if results[i][case] != res:
-                    score -= 1
-                    if results[i][case] is not None and res is None:
-                        submitted += 1
-                    else:
-                        valid += 1
-                        print("Wrong result, expected {}, received {}".format(results[i][case], res))
+        if results[i][case] is not None and res is None:
+            submitted += 1
+        elif results[i][case] is not None and res is not None: 
+            if results[i][case] != res:
+                score -= 1
+                valid += 1
+                print("Wrong result\nExpected {}\nReceived {}".format(results[i][case], res))
     if submitted > 0:
-        print("Exercise {} hasn't been submitted".format(i+1))
+        print("Part {} hasn't been submitted".format(i+1))
     elif valid == 0:        
-        print("Exercise {} has valid solutions".format(i+1))
+        print("Part {} has valid solutions".format(i+1))
 
 if score == 0:
     score_str = "0"
