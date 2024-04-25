@@ -1,5 +1,5 @@
 # CodeSite
-Website for learning and testing Python.
+Web platform for learning and teaching how to code in Python.
 
 ## User mode
 To enter the site a user must enter his credentials (username and password). He can optionally opt out of saving his login. The main page is the modules page, where the user can see all the modules available to them. A new module is made available to them every week. Progress of the entire program or module can be seen on the right side. Inside every module the user can see different exercises, their descriptions and some examples. The download files button will download all the necessary Python files (<name_of_exercise>_exercise.py and <name_of_exercise>_tester.py). Exercises are solved in the _exercise.py file and to test them against test cases you run _tester.py. The tester file will evaluate the user's code and send the final score back to this website.
